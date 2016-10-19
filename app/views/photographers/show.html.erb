@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Photographer #<%= @photographer.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Email</dt>
+      <dd><%= @photographer.email %></dd>
+
+      <dt>Password</dt>
+      <dd><%= @photographer.password %></dd>
+
+      <dt>Nickname</dt>
+      <dd><%= @photographer.nickname %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/photographers" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/photographers/<%= @photographer.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_photographer/<%= @photographer.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
