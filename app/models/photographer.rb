@@ -1,6 +1,10 @@
 class Photographer < ApplicationRecord
   # Direct associations
 
+  has_many   :votes,
+             :foreign_key => "user_id",
+             :dependent => :destroy
+
   has_many   :photos,
              :foreign_key => "owner_id",
              :dependent => :destroy
