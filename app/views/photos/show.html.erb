@@ -23,3 +23,43 @@
     </div>
   </div>
 </div>
+
+<!-- A Photo has many likes -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Likes
+      </li>
+
+      <% @photo.likes.each do |vote| %>
+        <li class="list-group-item">
+          <a href="/votes/<%= vote.id %>">
+            <%= vote.owner_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Photo has many fans -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Fans
+      </li>
+
+      <% @photo.fans.each do |photographer| %>
+        <li class="list-group-item">
+          <a href="/photographers/<%= photographer.id %>">
+            <%= photographer.owner_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
